@@ -9,8 +9,11 @@ Cocoon comes to the rescue with an easy method for adding nested fields to a for
 handle image uploads.
 
 See the documentation for each gem:
+
 Cocoon: https://github.com/nathanvda/cocoon
+
 CarrierWave: https://github.com/carrierwaveuploader/carrierwave 
+
 RMagick: https://github.com/rmagick/rmagick
 
 Note: RMagick installation can be tricky and requires extra steps for Ubuntu. See the documentation for help.
