@@ -1,0 +1,34 @@
+I"q(function() {
+  jQuery(function($) {});
+
+  $(document).on('page:change', function() {
+    var onAddFile;
+    onAddFile = function(event) {
+      var file, member_idContainer, url;
+      file = event.target.files[0];
+      url = URL.createObjectURL(file);
+      member_idContainer = $(this).parent().siblings('div.member_id');
+      if (member_idContainer.find('img').length === 0) {
+        return member_idContainer.append('<img src="' + url + '" />');
+      } else {
+        return member_idContainer.find('img').attr('src', url);
+      }
+    };
+    $('input[type=file]').each(function() {
+      return $(this).change(onAddFile);
+    });
+    $('#members').bind('cocoon:before-insert', function(e, task_to_be_added) {
+      console.log(task_to_be_added);
+      return task_to_be_added.fadeIn('slow');
+    });
+    $('#members').bind('cocoon:before-remove', function(e, task) {
+      $(this).data('remove-timeout', 1000);
+      return task.fadeOut('slow');
+    });
+    return $('body').on('cocoon:after-insert', function(e, addedPartial) {
+      return $('input[type=file]', addedPartial).change(onAddFile);
+    });
+  });
+
+}).call(this);
+:ET
