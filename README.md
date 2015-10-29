@@ -28,10 +28,15 @@ That's it! Start up a rails server, go to the home page, create a user account, 
 You will be able to add as many instances of the member fields as you want.
 
 Files to note:
+
 User, Document, and Member models
+
 Documents Controller's strong parameters (at the bottom of the file)
+
 Documents form, of course, and _member_fields.html.erb
+
 documents.coffee (this is what creates the nice fade in effect)
+
 custom.css.scss for the styles
 
 IMPORTANT!: For Cocoon to work, your form code MUST BE INDENTED PROPERLY. If you slap everything on the first column
